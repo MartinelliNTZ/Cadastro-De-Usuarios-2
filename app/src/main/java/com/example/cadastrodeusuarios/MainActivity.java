@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatButton btNovo;
     private ListView listView;
     private SQLiteDatabase dados;
+    private final String NOME_DATABASE = "usuarios";
 
 
     @Override
@@ -41,10 +42,9 @@ public class MainActivity extends AppCompatActivity {
     public void criarBD(){
         try {
 
-            dados = openOrCreateDatabase("usuarios", MODE_PRIVATE,null);
+            dados = openOrCreateDatabase(NOME_DATABASE, MODE_PRIVATE,null);
             String sql = "CREATE TABLE IF NOT EXISTS pessoas    (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "nome TEXT NOT NULL); ";
-
             dados.execSQL(sql);
 
 
@@ -56,4 +56,20 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    public void listarDados(){
+        try {
+            dados = openOrCreateDatabase(NOME_DATABASE,MODE_PRIVATE,null);
+
+
+
+
+
+            Log.i("INFO DB","Sucesso ao listar dados:   ");
+
+        }catch (Exception e){
+            Log.i("INFO DB","ERRO ao listar dados :   "+e.getMessage());
+
+        }
+    }
+
 }
