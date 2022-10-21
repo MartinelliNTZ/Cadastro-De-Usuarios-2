@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Marlon_Mobile/Aula_Mobile/cadastrodeusuarios/app/src/main/res/drawable/botao_arredondado.xml" value="0.332" />
+        <entry key="..\:/Marlon_Mobile/Aula_Mobile/cadastrodeusuarios/app/src/main/res/layout/activity_cad.xml" value="0.33" />
         <entry key="..\:/Marlon_Mobile/Aula_Mobile/cadastrodeusuarios/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Marlon_Mobile/Aula_Mobile/cadastrodeusuarios/app/src/main/res/menu/menu_de_voltar.xml" value="0.365625" />
       </map>
     </option>
   </component>
