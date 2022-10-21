@@ -40,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         criarBD();
         listarDados();
 
+        btNovo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mudarActivty();
+            }
+        });
+
 
 
 
@@ -48,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btNovo= findViewById(R.id.btNovo);
         listView= findViewById(R.id.listView);
     }
-    public void bt (View v){
+    public void mudarActivty (){
         btNovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

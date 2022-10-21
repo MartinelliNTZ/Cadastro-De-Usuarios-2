@@ -13,6 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/edt_arredondado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,6 +22,7 @@
             android:id="@+id/edtNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edt_arredondado"
             android:hint="Nome do Usuário" />
     </com.google.android.material.textfield.TextInputLayout>
 

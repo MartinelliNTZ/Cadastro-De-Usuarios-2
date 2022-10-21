@@ -37,7 +37,7 @@ public class CadActivity extends AppCompatActivity {
 
     public void cadUser(){
         nome = edtNome.getText().toString();
-        if (nome != null) {
+        if (nome != null & !nome.isEmpty()) {
             try {
                 dados = openOrCreateDatabase("usuarios", MODE_PRIVATE, null);
 
@@ -54,6 +54,8 @@ public class CadActivity extends AppCompatActivity {
                 Toast.makeText(this, "Dados Inválidos", Toast.LENGTH_SHORT).show();
 
             }
+        }else{
+            Toast.makeText(this, "Não pode estar vázio", Toast.LENGTH_SHORT).show();
         }
 
     }
