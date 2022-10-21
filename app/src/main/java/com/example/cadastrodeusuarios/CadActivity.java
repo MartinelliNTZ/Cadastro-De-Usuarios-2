@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -29,7 +30,7 @@ public class CadActivity extends AppCompatActivity {
         btCad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cadUser();
+                cadUserDois();
             }
         });
 
@@ -59,6 +60,32 @@ public class CadActivity extends AppCompatActivity {
         }
 
     }
+    public void cadUserDois(){
+        nome = edtNome.getText().toString();
+        if (nome != null & !nome.isEmpty()) {
+            try {
+                dados = openOrCreateDatabase("usuarios", MODE_PRIVATE, null);
+                String sql = "INSERT INTO pessoas (nome) VALUES (?)";
+                SQLiteStatement statement = dados.compileStatement(sql);
+                statement.bindString(1,nome);
+                statement.executeInsert();
+                dados.close();
+                finish();
+                Log.i("INFO DB", "Sucesso ao criar:   ");
+                Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT).show();
+                finish();
+
+            } catch (Exception e) {
+                Log.i("INFO DB", "ERRO ao criar tabela:   " + e.getMessage());
+                Toast.makeText(this, "Dados Inválidos", Toast.LENGTH_SHORT).show();
+
+            }
+        }else{
+            Toast.makeText(this, "Não pode estar vázio", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,4 +100,20 @@ public class CadActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
