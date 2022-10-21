@@ -16,7 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.cadastrodeusuarios.helpers.DbHelper;
+
 
 import java.util.ArrayList;
 
@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase dados;
     private final String NOME_DATABASE = "usuarios";
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listarDados();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         linkage();
         criarBD();
         listarDados();
+
 
 
 
@@ -69,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         listarDados();*/
     }
     public void criarBD(){
+
         try {
             dados = openOrCreateDatabase(NOME_DATABASE, MODE_PRIVATE,null);
             String sql = "CREATE TABLE IF NOT EXISTS pessoas    (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
